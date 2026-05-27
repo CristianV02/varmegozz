@@ -1,0 +1,272 @@
+/* ==========================================================================
+   1. VARIABLES DE DISEÑO (Arquitectura Limpia y Escalable)
+   ========================================================================== */
+:root {
+  --sidebar-bg: #0f172a;       /* Slate 900 (Azul oscuro premium) */
+  --sidebar-hover: #1e293b;    /* Slate 800 */
+  --accent-color: #3b82f6;     /* Azul Eléctrico */
+  --accent-light: rgba(59, 130, 246, 0.1);
+  --body-bg: #f8fafc;          /* Slate 50 (Fondo grisáceo limpio) */
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;       /* Slate 500 */
+  --border-color: #e2e8f0;     /* Slate 200 */
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   2. ESTILOS BASE Y LAYOUT ESTRUCTURAL
+   ========================================================================== */
+body {
+  font-family: 'Plus Jakarta Sans', 'Muli', sans-serif;
+  background-color: var(--body-bg);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none !important;
+  transition: var(--transition-smooth);
+}
+
+.dashboard-wrapper {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ==========================================================================
+   3. SIDEBAR (MENÚ LATERAL)
+   ========================================================================== */
+#sidebar-container {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  transition: var(--transition-smooth);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#sidebar-container .logo-wrapper {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#logo {
+  max-width: 80%;
+  height: auto;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+}
+
+#sidebar-container .menu {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px;
+  gap: 8px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+}
+
+.menu-item i {
+  font-size: 1.2rem;
+}
+
+.menu-item:hover {
+  color: #fff;
+  background-color: var(--sidebar-hover);
+}
+
+.menu-item.active {
+  color: #fff;
+  background-color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* ==========================================================================
+   4. CONTENEDOR PRINCIPAL Y NAVBAR SUPERIOR
+   ========================================================================== */
+#content-wrapper {
+  flex: 1;
+  margin-left: 260px; /* Alínea el contenido al lado del sidebar */
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  transition: var(--transition-smooth);
+}
+
+.dashboard-navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+  height: 70px;
+}
+
+/* Forzar comportamiento Flexbox en la barra de navegación */
+.dashboard-navbar .container-fluid {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100%;
+  margin: 0;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   5. PERFIL DE USUARIO (ALINEADO A LA DERECHA - ESTILO FOTO 1)
+   ========================================================================== */
+.user-profile {
+  margin-left: auto !important; /* Empuja el perfil al extremo derecho */
+  display: flex !important;
+  align-items: center !important;
+}
+
+.profile-link {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  color: #1e293b !important;
+  font-weight: 500;
+}
+
+.profile-link:hover {
+  background-color: #f1f5f9;
+}
+
+/* CONTROL ESTRICTO DEL AVATAR (Arregla el bug del avatar gigante) */
+.avatar, 
+img[src*="avatar.png"], 
+.profile-link img {
+  width: 40px !important;
+  height: 40px !important;
+  max-width: 40px !important;
+  max-height: 40px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 2px solid var(--accent-color) !important;
+  display: inline-block !important;
+  margin: 0 !important;
+}
+
+.user-info-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.btn-cerrarsesion {
+  font-size: 0.75rem;
+  color: var(--text-muted) !important;
+  font-weight: 400;
+  display: block;
+}
+
+/* ==========================================================================
+   6. CONTENIDO, TARJETAS Y CONTENEDORES DE TABLAS
+   ========================================================================== */
+.content-body {
+  padding: 32px 24px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Tarjeta de Bienvenida del DashBoard */
+.welcome-card {
+  background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  color: #fff;
+}
+
+.brand-images-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 20px;
+  border-radius: var(--radius-md);
+}
+
+.brand-img-primary, .brand-img-secondary {
+  max-width: 100%;
+  height: auto;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   7. ESCUDO ANTI-DUPLICADOS (VERSIÓN CORREGIDA Y QUIRÚRGICA)
+   ========================================================================== */
+/* Apunta ÚNICAMENTE a los elementos repetidos que se inyectan DENTRO de las tablas AJAX */
+#tablaUsuarios ul, #tablaUsuarios li, #tablaUsuarios .navbar-nav, #tablaUsuarios .user-profile,
+#tablaDocumento ul, #tablaDocumento li, #tablaDocumento .navbar-nav, #tablaDocumento .user-profile,
+#tablaFichaTecnica ul, #tablaFichaTecnica li, #tablaFichaTecnica .navbar-nav, #tablaFichaTecnica .user-profile,
+#tablaCrearFichaTecnica ul, #tablaCrearFichaTecnica li, #tablaCrearFichaTecnica .navbar-nav, #tablaCrearFichaTecnica .user-profile {
+  display: none !important;
+}
+
+/* Forzar que el sidebar izquierdo NUNCA se oculte */
+#sidebar-container, #sidebar-container * {
+  display: flex !important;
+}
+#sidebar-container .menu-item {
+  display: flex !important;
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDAD (Media Queries)
+   ========================================================================== */
+@media (max-width: 992px) {
+  #sidebar-container {
+    transform: translateX(-100%); /* Esconde el menú en móviles */
+  }
+  
+  #sidebar-container.active {
+    transform: translateX(0); /* Lo muestra si se activa por JS */
+  }
+
+  #content-wrapper {
+    margin-left: 0; /* Ocupa toda la pantalla si el sidebar está oculto */
+  }
+
+  .dashboard-navbar .container-fluid {
+    padding: 0 16px;
+  }
+}

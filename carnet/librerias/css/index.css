@@ -1,0 +1,25 @@
+h2 {
+    text-align: center;
+}
+
+#signup {
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+footer {
+    min-height: 30px;
+    background-color: hsl(0, 100%, 49%);
+    color: black;
+}
+
+footer p {
+    margin-top: 3px;
+}
+
+.responsives {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
