@@ -1,0 +1,165 @@
+/* --- CONFIGURACIÓN DE VARIABLES (Buenas prácticas de ingeniería) --- */
+:root {
+  --bg-gradient: radial-gradient(circle at 50% 50%, #0b0f19 0%, #020408 100%);
+  --accent-cyan: #00f2fe;
+  --accent-purple: #4facfe;
+  --accent-neon: #39ff14; /* Indicador de éxito */
+  --glass-bg: rgba(6, 11, 25, 0.7);
+  --glass-border: rgba(0, 242, 254, 0.15);
+  --text-primary: #f1f5f9;
+  --text-secondary: #64748b;
+  --font-cyber: 'Orbitron', 'Work Sans', sans-serif; /* Si añades Orbitron en HTML, se verá aún más futurista */
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  margin: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* --- ANIMACIÓN DE FONDO (Detalle sutil para sorprender) --- */
+body::before {
+  content: "";
+  position: absolute;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.03) 0%, transparent 60%);
+  animation: floatingGlow 12s infinite alternate ease-in-out;
+  z-index: -1;
+}
+
+@keyframes floatingGlow {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(5%, 5%) scale(1.1); }
+}
+
+/* --- BANNER TOP --- */
+.bannerTop {
+  background: rgba(2, 4, 8, 0.8);
+  backdrop-filter: blur(12px);
+  width: 100%;
+  padding: 1.5rem 0;
+  text-align: center;
+  border-bottom: 2px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.tpimg {
+  height: auto;
+  max-height: 90px;
+  filter: drop-shadow(0 0 15px rgba(0, 242, 254, 0.4));
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.tpimg:hover {
+  transform: rotate(3deg) scale(1.08);
+  filter: drop-shadow(0 0 25px var(--accent-cyan));
+}
+
+/* --- CONTENEDOR CENTRAL (Efecto Sci-Fi Hud) --- */
+.formcenter {
+  padding: 60px 45px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px; 
+  border: 1px solid var(--glass-border);
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+  margin: 4rem auto;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7),
+              inset 0 0 20px rgba(0, 242, 254, 0.05);
+  transition: border-color 0.4s, box-shadow 0.4s;
+}
+
+/* Línea estética superior tipo "interfaz militar/tecnológica" */
+.formcenter::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: 10%; right: 10%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+}
+
+/* Cambio estético cuando el usuario está escribiendo dentro del contenedor */
+.formcenter:focus-within {
+  border-color: rgba(0, 242, 254, 0.4);
+  box-shadow: 0 25px 60px -12px rgba(0, 242, 254, 0.15),
+              inset 0 0 30px rgba(0, 242, 254, 0.08);
+}
+
+/* --- TÍTULO CON EFECTO GLITCH/NEÓN --- */
+h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(135deg, #fff 0%, #a5f3fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
+}
+
+label {
+  font-family: var(--font-cyber);
+  display: block;
+  text-align: left;
+  width: 85%;
+  margin: 0 auto 0.6rem auto;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+/* Cambia el color del label cuando el input está activo */
+input:focus + label,
+.formcenter:focus-within label {
+  color: var(--accent-cyan);
+}
+
+/* --- INPUTS DE ALTA INGENIERÍA --- */
+input[type="text"], 
+input[type="Password"] {
+  width: 85%;
+  padding: 16px 20px;
+  background: rgba(2, 4, 8, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 1.8rem;
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+input[type="text"]:focus, 
+input[type="Password"]:focus {
+  outline: none;
+  background: rgba(2, 4, 8, 0.8);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.25),
+              inset 0 0 10px rgba(0, 242, 254, 0.1);
+  padding-left: 24px; /* Pequeña animación de desplazamiento al escribir */
+}
+
+/* --- BOTÓN NEOMÓRFICO CON MATRIZ DE DEGRADADO --- */
+input[type="submit"] {
+  width: 85%;
+  color: #020408;
+  background: linear-gradient(90deg, var(--accent-purple) 0%, var(--accent-cyan) 100%);
+  border: none;
+  margin-top: 1rem;
+  padding: 18px;
+}

@@ -1,0 +1,117 @@
+body {
+    /* font-family: "josefin Sans"; */
+    font-family: 'Work Sans', sans-serif;
+    height: 100vh;
+    background-image: url("../imagenes/colores.jpg");
+    /* background-color: #bc783b; */
+}
+
+.formcenter {
+    display: flow-root;
+    margin: 35%;
+    width: 30%;
+    max-width: 550px;
+    padding: 30px;
+    background-color: #D4F6CC;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+.formcenter1{
+    background-image: url("../imagenes/logo_icolplast1.png");
+    /* background-image: url("./imagen/fondo2.png"); */
+    background-repeat: no-repeat;
+    /* Evita la repetición de la imagen */
+    background-size: cover;
+    /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+    background-position:center;
+    /* Alinea la imagen al centro del fondo */
+    height: 40vh;
+    width: 40vh;
+    max-height: 300px;
+    max-width: 350px;
+    margin-top: -70px;
+    margin-bottom: 20px;
+    margin-left: 60px;
+    font-family: "Work Sans", Sans-serif;
+}
+input[type=Password] {
+    width: 100%;
+    padding: 10px 10px;
+    display:inline-block;
+    border: 1px solid #0015FF;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 10px 10px;
+    display: inline-block;
+    border: 1px solid #0015FF;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 90%;
+    color: white;
+    background-color: #EF5B0C;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+label {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 10px;
+    margin-block-end: 100px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.bannerTop {
+    /* background-color: rgb(255, 255, 255); */
+    width: auto;
+    height: auto;
+    align-self: left;
+    justify-content: right;
+    text-align: center;
+    border-bottom: 10px solid #3CCF4E;
+}
+
+.bannerTop2 {
+    background-color: rgb(255, 255, 255);
+    width: auto;
+    height: auto;
+    align-self: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 10px solid #3CCF4E;
+}
+
+.tpimg {
+    margin-top: 4px;
+    margin-left: -100px;
+    margin-bottom: 4px;
+    height: auto;
+    max-height: 250px;
+    text-align: center;
+}
+
+.imagen_logo {
+    height: auto;
+    max-height: 200px;
+    text-align: center;
+}

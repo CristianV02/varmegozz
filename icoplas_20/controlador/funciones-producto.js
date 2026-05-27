@@ -1,0 +1,150 @@
+// function agregarFormNuevo() {
+//     $('#numero_documento').val();
+//     $('#nombre').val();
+//     $('#usuario').val();
+//     $('#contrasena').val();
+// }
+
+function agregardatosProducto() {
+    id_producto = $('#id_producto').val();
+    nombre_producto = $('#nombre_producto').val();
+    precio_producto = $('#precio_producto').val();
+    marca_producto = $('#marca_producto').val();
+
+    cadena = "id_producto=" + id_producto +
+        "&nombre_producto=" + nombre_producto +
+        "&precio_producto=" + precio_producto +
+        "&marca_producto=" + marca_producto;
+
+    accion = "registrar";
+    mensaje_si = "El usuario registrado correctamente.";
+    mensaje_no = "Error, NO se registró el usuario.";
+
+    $.ajax({
+        type: "POST",
+        url: "../modelo/accionesProducto.php?accion=registrar",
+        data: cadena,
+        success: function (r) {
+            console.log(r);
+            if (r == 0) {
+                alertify.error(mensaje_no);
+            } else {
+                alertify.success(mensaje_si);
+                cargarTablaProducto();
+                //$('#tabla').load('../administrador/usuarios.php');
+                location.reload();
+
+
+            }
+        }
+    });
+}
+// Función para cargar información  a modificar
+function agregarformProducto(datos) {
+    d = datos.split('||');
+    $('#codigou').val(d[0]);
+    $('#id_productou').val(d[1]);
+    $('#nombre_productou').val(d[2]);
+    $('#precio_productou').val(d[3]);
+    $('#marca_productou').val(d[4]);
+}
+// Función para modificar 
+function modificarProducto() {
+    codigo = $('#codigou').val();
+    id_producto = $('#id_productou').val();
+    nombre_producto = $('#nombre_productou').val();
+    precio_producto = $('#precio_productou').val();
+    marca_producto = $('#marca_productou').val();
+
+    cadena = "codigo=" + codigo +
+        "&id_producto=" + id_producto +
+        "&nombre_producto=" + nombre_producto +
+        "&precio_producto=" + precio_producto +
+        "&marca_producto=" + marca_producto;
+
+    accion = "modificar";
+    mensaje_si = "El usuario modificado con exito";
+    mensaje_no = "Error de registro";
+
+    $.ajax({
+        type: "POST",
+        url: "../modelo/accionesProducto.php?accion=modificar",
+        data: cadena,
+        success: function (r) {
+            console.log(r);
+            if (r == 0) {
+                alertify.error(mensaje_no);
+            } else {
+                alertify.success(mensaje_si);
+                cargarTablaProducto();
+                // $('#tabla').load('../administrador/usuarios.php');
+                location.reload();
+            }
+        }
+    });
+}
+// Función para cargar información de la vista
+function cargarTablaProducto() {
+    $.ajax({
+        type: "POST",
+        url: "../administrador/productos.php",
+        async: true,
+        success: function (respuesta) {
+            // console.log(respuesta);
+            $("#tablaProducto").html("");
+            $("#tablaProducto").html(respuesta);
+        },
+        error: function (request, error) {
+            alertify.success(error);
+        }
+    });
+}
+// Función apra confirmar la eliminación de un registro
+function preguntarSiNoProducto() {
+
+    codigo = $('#codigou').val();
+    id_producto = $('#id_productou').val();
+
+    alertify.confirm('Eliminar periodo', ' ¿Está seguro de eliminar el usuario ' + id_producto + '?',
+        function () {
+            eliminarDatos(codigo, id_producto)
+        },
+        function () {
+            alertify.error('Error, no se ha eliminado el usuario ' + id_producto)
+        });
+
+}
+
+function eliminarDatos(codigo, identificacion) {
+    cadena = "codigo=" + codigo +
+        "&id_producto=" + id_producto;
+    mensaje_si = "El usuario se ha eliminado con exito";
+    mensaje_no = "Error de eliminacion";
+    $.ajax({
+        type: "POST",
+        url: "../modelo/accionesProducto.php?accion=eliminar",
+        data: cadena,
+        success: function (r) {
+            console.log(r);
+            if (r == 0) {
+                alertify.error(mensaje_no);
+            } else {
+                alertify.success(mensaje_si);
+                cargarTablaProducto();
+                //  $('#tabla').load('../administrador/usuarios.php');
+                location.reload();
+
+            }
+        }
+    });
+}
+
+function mostrarOcultar(event) {
+    event.stopPropagation();
+    var navbarCollapse = document.getElementById("navbarSupportedContent");
+    if (navbarCollapse.style.display === "none") {
+        navbarCollapse.style.display = "block"; // Si está oculto, mostrarlo
+    } else {
+        navbarCollapse.style.display = "none"; // Si está visible, ocultarlo
+    }
+}

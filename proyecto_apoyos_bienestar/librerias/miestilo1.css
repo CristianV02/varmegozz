@@ -1,0 +1,120 @@
+body {
+  /* font-family: "josefin Sans"; */
+  font-family: 'Work Sans', sans-serif;
+  height: 100vh;
+  /* background-color: #bc783b; */
+}
+
+.contenedor {
+  margin: 0px;
+  padding: 0px;
+}
+
+footer {
+  position: fixed;
+  height: 3rem;
+  width: 100%;
+  bottom: 0rem;
+  background-color: #39A900;
+  border-top: 0.1rem solid #e4e4e4;
+  color: #ffffff;
+  font-size: 1.8rem;
+  /* font-family: "Josefin Sans Bold"; */
+  font-family: 'Work Sans', sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+footer p {
+  margin-top: 3px;
+}
+
+.header_logo {
+  margin-top: 2rem;
+}
+
+.header_mintic {
+  margin-top: 2rem;
+}
+
+.titulo_app {
+  font-style: Italic;
+}
+
+#submitButton {
+  color: #ffffffff;
+  /* background-color: #ff671d;  */
+  background-color: #39A900;
+  border-color: #39A900;
+}
+
+#btnBusqueda {
+  color: #ffffffff;
+  background-color: #39A900;
+  border-color: #39A900;
+}
+
+.imagen_logo {
+  height: 6rem;
+}
+
+.migas-pan {
+  background-color: aquamarine;
+}
+
+.bg-info {
+  background-color: aquamarine;
+}
+
+.bg-form {
+  border: 4px solid #000000;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  #forms {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #forms {
+    width: 90%;
+  }
+
+  footer {
+    height: 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #forms {
+    width: 90%;
+  }
+
+  footer {
+    height: 2rem;
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-height: 600px) {
+  #forms {
+    width: 90%;
+  }
+
+  footer {
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .imagen_logo {
+    height: 3rem;
+  }
+}
+
+.centrar {
+  margin: 0px auto;
+  text-align: center;
+}
