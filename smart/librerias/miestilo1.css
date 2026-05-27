@@ -1,0 +1,132 @@
+body {
+  /* font-family: "josefin Sans"; */
+  font-family: "Work Sans", sans-serif;
+  height: 100vh;
+  /* background-color: #bc783b; */
+}
+
+.formcenter {
+  padding: 80px;
+  background-color: #d4f6cc;
+  border-radius: 50px;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+input[type="Password"] {
+  width: 80%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #0015ff;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 12px 20px;
+  display: inline-block;
+  border: 1px solid #0015ff;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: 40%;
+  color: white;
+  background-color: #ef5b0c;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+label {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.bannerTop {
+  background-color: #f0f0f0;
+  width: auto;
+  height: auto;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 10px solid #3ccf4e;
+}
+.tpimg {
+  height: auto;
+  max-height: 200px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1150px) {
+  /* Estilos para dispositivos móviles */
+  .formcenter {
+    padding: 3rem;
+    background-color: #d4f6cc;
+    border-radius: 50px;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  input[type="Password"] {
+    width: 100%;
+    /* padding: 12px 20px; */
+    display: inline-block;
+    border: 1px solid #0015ff;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+    font-size: 12px;
+    box-sizing: border-box;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    /* padding: 12px 20px; */
+    display: inline-block;
+    border: 1px solid #0015ff;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+    font-size: 12px;
+    box-sizing: border-box;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    color: white;
+    background-color: #ef5b0c;
+    margin-top: 0.5rem;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  .tpimg {
+    height: auto;
+    max-height: 150px;
+    text-align: center;
+  }
+  h1 {
+    display: block;
+    font-size: 2rem;
+    margin-block-start: 0.1rem;
+    margin-block-end: 0.1rem;
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
+    font-weight: bold;
+    text-align: center;
+  }
+}

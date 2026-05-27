@@ -1,0 +1,7 @@
+[22-Aug-2024 00:07:10 UTC] PHP Parse error:  Unmatched '}' in /home/jazigagz/public_html/web/smart/administrador/vista_usu/vista_Reportes.php on line 239
+[22-Aug-2024 00:07:25 UTC] PHP Parse error:  Unmatched '}' in /home/jazigagz/public_html/web/smart/administrador/vista_usu/vista_Reportes.php on line 239
+[30-Dec-2024 18:41:42 UTC] PHP Warning:  Undefined variable $nombre in /home/jazigagz/public_html/web/smart/administrador/vista_usu/vista_ReporteMecanismo.php on line 45
+[30-Dec-2024 18:41:42 UTC] PHP Warning:  Undefined variable $apellido in /home/jazigagz/public_html/web/smart/administrador/vista_usu/vista_ReporteMecanismo.php on line 45
+[30-Dec-2024 18:41:42 UTC] PHP Warning:  Undefined variable $rol in /home/jazigagz/public_html/web/smart/administrador/vista_usu/vista_ReporteMecanismo.php on line 86
+[30-Dec-2024 18:41:42 UTC] PHP Warning:  Undefined variable $res in /home/jazigagz/public_html/web/smart/administrador/vista_usu/vista_ReporteMecanismo.php on line 94
+[30-Dec-2024 18:41:42 UTC] PHP Warning:  foreach() argument must be of type array|object, null given in /home/jazigagz/public_html/web/smart/administrador/vista_usu/vista_ReporteMecanismo.php on line 94

@@ -1,0 +1,16 @@
+[12-Jul-2024 12:23:10 America/Bogota] PHP Warning:  Undefined variable $nombre in /home/jazigagz/public_html/web/smart/fpdf-dev/smartPDF.php on line 300
+[12-Jul-2024 12:23:10 America/Bogota] PHP Warning:  Undefined variable $apellido in /home/jazigagz/public_html/web/smart/fpdf-dev/smartPDF.php on line 300
+[12-Jul-2024 12:23:10 America/Bogota] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/jazigagz/public_html/web/smart/fpdf/fpdf.php:267
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/fpdf/fpdf.php(1058): FPDF->Error()
+#1 /home/jazigagz/public_html/web/smart/fpdf/fpdf.php(1004): FPDF->_checkoutput()
+#2 /home/jazigagz/public_html/web/smart/fpdf-dev/smartPDF.php(307): FPDF->Output()
+#3 {main}
+  thrown in /home/jazigagz/public_html/web/smart/fpdf/fpdf.php on line 267
+[05-Sep-2024 08:00:52 America/Bogota] PHP Fatal error:  Uncaught Exception: FPDF error: Some data has already been output, can't send PDF file in /home/jazigagz/public_html/web/smart/fpdf/fpdf.php:267
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/fpdf/fpdf.php(1058): FPDF->Error()
+#1 /home/jazigagz/public_html/web/smart/fpdf/fpdf.php(1004): FPDF->_checkoutput()
+#2 /home/jazigagz/public_html/web/smart/fpdf-dev/smartPDF.php(308): FPDF->Output()
+#3 {main}
+  thrown in /home/jazigagz/public_html/web/smart/fpdf/fpdf.php on line 267

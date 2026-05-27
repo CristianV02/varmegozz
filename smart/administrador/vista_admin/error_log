@@ -1,0 +1,102 @@
+[29-Jul-2024 20:21:36 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[29-Jul-2024 20:21:40 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[29-Jul-2024 20:21:44 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[29-Jul-2024 20:21:48 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[29-Jul-2024 20:21:56 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[29-Jul-2024 20:22:11 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[29-Jul-2024 20:25:25 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[29-Jul-2024 20:27:26 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[30-Jul-2024 09:23:18 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[30-Jul-2024 09:23:44 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[30-Jul-2024 09:24:40 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[30-Jul-2024 09:24:56 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[30-Jul-2024 09:25:05 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[30-Jul-2024 09:25:25 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[30-Jul-2024 09:25:27 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[30-Jul-2024 09:26:37 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
+[30-Jul-2024 09:32:57 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'elaborado_por' in 'field list' in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php:27
+Stack trace:
+#0 /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php(27): PDOStatement->execute()
+#1 /home/jazigagz/public_html/web/smart/administrador/vista_admin/vista_Reportes.php(152): misReportes->viewReportes()
+#2 {main}
+  thrown in /home/jazigagz/public_html/web/smart/modelo/datos-Reportes.php on line 27
