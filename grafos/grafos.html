@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔐 CyberGraph: Advanced Security Pattern</title>
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f172a, #1e1b4b);
+      --panel-bg: rgba(30, 41, 59, 0.7);
+      --neon-cyan: #06b6d4;
+      --neon-green: #10b981;
+      --neon-red: #ef4444;
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background: var(--bg-gradient);
+      color: #e2e8f0;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: var(--neon-cyan);
+      text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+      margin-bottom: 5px;
+    }
+
+    .dashboard {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      max-width: 900px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .panel {
+      background: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-sizing: border-box;
+    }
+
+    .panel-lock { width: 360px; text-align: center; }
+    .panel-data { width: 480px; flex-grow: 1; }
+
+    canvas {
+      background: #020617;
+      border: 2px solid #334155;
+      border-radius: 8px;
+      cursor: pointer;
+      touch-action: none;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+      transition: border-color 0.3s;
+    }
+
+    canvas.success { border-color: var(--neon-green); }
+    canvas.error { border-color: var(--neon-red); }
+
+    .btn {
+      background: transparent;
+      border: 1px solid var(--neon-cyan);
+      color: var(--neon-cyan);
+      padding: 10px 20px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn:hover:not(:disabled) {
+      background: rgba(6, 182, 212, 0.2);
+      box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+    }
+
+    .btn:disabled {
+      border-color: #475569;
+      color: #475569;
+      cursor: not-allowed;
+    }
+
+    #msg {
+      margin: 15px 0;
+      font-size: 0.9rem;
+      min-height: 40px;
+    }
+
+    /* Consola de Datos de Ingeniería */
+    .console-section {
+      background: #020617;
+      padding: 12px;
+      border-radius: 6px;
+      border-left: 3px solid var(--neon-cyan);
+      font-size: 0.8rem;
+      margin-bottom: 15px;
+      overflow-x: auto;
+    }
+
+    .console-section h3 {
+      margin: 0 0 8px 0;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+
+    .hash-text {
+      color: #fbbf24;
+      word-break: break-all;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    td, th {
+      border: 1px solid #1e293b;
+      padding: 4px;
+    }
+
+    th { color: var(--neon-cyan); font-size: 0.75rem; }
+    .active-cell { background: rgba(16, 185, 129, 0.2); color: var(--neon-green); font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<h1>🔐 CYBERGRAPH: AUTH SYSTEM</h1>
+<p style="margin:0; font-size:0.85rem; color:#64748b;">Estructuras de Datos & Criptografía Aplicada</p>
+
+<div class="dashboard">
+  <div class="panel panel-lock">
+    <canvas id="canvas" width="320" height="320"></canvas>
+    <div id="msg">⚡ ESTADO: Esperando Inicialización...</div>
+    <div>
+      <button class="btn" id="btn-main" onclick="processPattern()">Registrar Grafo</button>
+      <button class="btn" style="border-color:#64748b; color:#64748b;" onclick="clearCanvas()">Reset</button>
+    </div>
+  </div>
+
+  <div class="panel panel-data">
+    <div class="console-section">
+      <h3>🔑 Capa de Seguridad (SHA-256 Hash Cryptography)</h3>
+      <div><strong>DB Hash Guardado:</strong> <span class="hash-text" id="db-hash">Ninguno (Vacío)</span></div>
+      <div style="margin-top:5px;"><strong>Hash de Intento Actual:</strong> <span class="hash-text" id="current-hash">N/A</span></div>
+    </div>
+
+    <div class="console-section">
+      <h3>📈 Análisis del Grafo en Tiempo Real</h3>
+      <div id="graph-metrics">
+        Nodos seleccionados: 0 <br>
+        Grado de entrada/salida: N/A <br>
+        ¿Es Camino Euleriano?: N/A
+      </div>
+    </div>
+
+    <div class="console-section">
+      <h3>📊 Matriz de Adyacencia ($A$)</h3>
+      <table id="matrix-table"></table>
+    </div>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+
+let nodes = [];
+let pattern = [];
+let isDrawing = false;
+
+// Variables Pro
+let savedHash = null;
+let attempts = 0;
+let isBlocked = false;
+
+// Inicializar Web Audio API para efectos de sonido sintéticos (Sin archivos externos)
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+function playBeep(freq, type="sine", duration=0.1) {
+  try {
+    let osc = audioCtx.createOscillator();
+    let gain = audioCtx.createGain();
+    osc.type = type;
+    osc.frequency.value = freq;
+    gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + duration);
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    osc.start();
+    osc.stop(audioCtx.currentTime + duration);
+  } catch(e){}
+}
+
+// Configurar Nodos Grafo 3x3
+for(let y=0; y<3; y++) {
+  for(let x=0; x<3; x++) {
+    nodes.push({ x: 60 + x * 100, y: 60 + y * 100, id: y * 3 + x });
+  }
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  // Dibujar Aristas (Conexiones)
+  if(pattern.length > 0) {
+    ctx.strokeStyle = isBlocked ? "#ef4444" : "#06b6d4";
+    ctx.lineWidth = 5;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = ctx.strokeStyle;
+    ctx.beginPath();
+    ctx.moveTo(nodes[pattern[0]].x, nodes[pattern[0]].y);
+    for(let i=1; i<pattern.length; i++) {
+      ctx.lineTo(nodes[pattern[i]].x, nodes[pattern[i]].y);
+    }
+    ctx.stroke();
+    ctx.shadowBlur = 0; // Reset
+  }
+
+  // Dibujar Vértices (Nodos)
+  nodes.forEach(n => {
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, 16, 0, Math.PI*2);
+    let isSelected = pattern.includes(n.id);
+    
+    ctx.fillStyle = isSelected ? (isBlocked ? "#ef4444" : "#10b981") : "#1e293b";
+    ctx.fill();
+    ctx.strokeStyle = isSelected ? "#ffffff" : "#475569";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+    
+    // Identificador de Nodo para Ingenieros
+    ctx.fillStyle = isSelected ? "#000" : "#94a3b8";
+    ctx.font = "bold 11px Courier New";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(n.id, n.x, n.y);
+  });
+}
+
+// Lógica Asíncrona para Generar HASH Criptográfico SHA-256 real
+async function sha256(string) {
+  const utf8 = new TextEncoder().encode(string);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', utf8);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function getMousePos(e) {
+  const rect = canvas.getBoundingClientRect();
+  const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+  const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+  return { x: clientX - rect.left, y: clientY - rect.top };
+}
+
+function handleStart(e) {
+  if(isBlocked) return;
+  isDrawing = true;
+  handleMove(e);
+}
+
+async function handleMove(e) {
+  if(!isDrawing || isBlocked) return;
+  const pos = getMousePos(e);
+  const node = nodes.find(n => Math.hypot(n.x - pos.x, n.y - pos.y) < 22);
+  
+  if(node && !pattern.includes(node.id)) {
+    pattern.push(node.id);
+    playBeep(400 + (pattern.length * 80), "sine", 0.08); // Sonido incremental por nodo
+    draw();
+    await updateAnalytics();
+  }
+}
+
+// Actualizar Métricas de Ingeniería y Matriz en Pantalla
+async function updateAnalytics() {
+  const currentStr = pattern.join("-");
+  const currentHash = pattern.length >= 4 ? await sha256(currentStr) : "Esperando patrón mínimo (4)...";
+  document.getElementById("current-hash").innerText = currentHash;
+
+  // Actualizar Grafo en texto
+  let gradoStr = pattern.length > 0 ? pattern.map(id => `N${id}`).join(' → ') : 'N/A';
+  
+  // Condición de Camino Euleriano básica en patrón lineal
+  let esEuleriano = pattern.length >= 4 ? "SÍ (Camino continuo simple)" : "No cumple aristas mínimas";
+
+  document.getElementById("graph-metrics").innerHTML = `
+    <strong>Secuencia Vértices:</strong> ${gradoStr} <br>
+    <strong>Cardinalidad del Conjunto |V'|:</strong> ${pattern.length} nodos activos.<br>
+    <strong>Teorema de Grafos:</strong> ${esEuleriano}
+  `;
+
+  // Matriz de adyacencia
+  let matrix = Array(9).fill(0).map(() => Array(9).fill(0));
+  for(let i=0; i<pattern.length-1; i++) {
+    matrix[pattern[i]][pattern[i+1]] = 1;
+    matrix[pattern[i+1]][pattern[i]] = 1;
+  }
+
+  const table = document.getElementById("matrix-table");
+  table.innerHTML = "";
+  
+  // Header
+  let hr = document.createElement("tr");
+  hr.appendChild(document.createElement("th"));
+  for(let i=0; i<9; i++) { let th=document.createElement("th"); th.innerText=`N${i}`; hr.appendChild(th); }
+  table.appendChild(hr);
+
+  // Filas
+  for(let r=0; r<9; r++) {
+    let row = document.createElement("tr");
+    let th = document.createElement("th"); th.innerText=`N${r}`; row.appendChild(th);
+    for(let c=0; c<9; c++) {
+      let td = document.createElement("td");
+      td.innerText = matrix[r][c];
+      if(matrix[r][c] === 1) td.classList.add("active-cell");
+      row.appendChild(td);
+    }
+    table.appendChild(row);
+  }
+}
+
+async function processPattern() {
+  if(isBlocked) return;
+  const msgEl = document.getElementById("msg");
+
+  if(pattern.length < 4) {
+    msgEl.innerHTML = "<span style='color:var(--neon-red);'>❌ ERROR: Mínimo 4 nodos obligatorios para entropía segura.</span>";
+    playBeep(150, "sawtooth", 0.3);
+    return;
+  }
+
+  const patternStr = pattern.join("-");
+  const patternHash = await sha256(patternStr);
+
+  if(!savedHash) {
+    // Registro
+    savedHash = patternHash;
+    document.getElementById("db-hash").innerText = savedHash;
+    msgEl.innerHTML = "<span style='color:var(--neon-green);'>🔒 CREDENCIAL HASH GUARDADA EN BD MEMORIA. Intente login.</span>";
+    document.getElementById("btn-main").innerText = "Verificar Hash Autenticación";
+    playBeep(600, "triangle", 0.2);
+    clearCanvas(false);
+  } else {
+    // Login Autenticación
+    if(patternHash === savedHash) {
+      msgEl.innerHTML = "<span style='color:var(--neon-green);'>🔓 ACCESS GRANTED: Token SHA-256 Válido.</span>";
+      canvas.className = "success";
+      playBeep(880, "sine", 0.15);
+      setTimeout(() => playBeep(1200, "sine", 0.2), 100);
+      attempts = 0;
+    } else {
+      attempts++;
+      playBeep(180, "square", 0.4);
+      if(attempts >= 3) {
+        isBlocked = true;
+        canvas.className = "error";
+        msgEl.innerHTML = "<span style='color:var(--neon-red);'>🚨 SYSTEM BLOCKDOWN: 3 Fallos criptográficos.</span>";
+        document.getElementById("btn-main").disabled = true;
+      } else {
+        msgEl.innerHTML = `<span style='color:var(--neon-red);'>❌ ACCESS DENIED: Fallo de firma. Intentos res: ${3 - attempts}</span>`;
+      }
+    }
+  }
+}
+
+function clearCanvas(cleanText = true) {
+  if(isBlocked) return;
+  pattern = [];
+  canvas.className = "";
+  draw();
+  updateAnalytics();
+  if(cleanText) {
+    document.getElementById("msg").innerText = savedHash ? "⚡ Ingrese patrón de verificación..." : "⚡ Dibuja un patrón para calcular el Hash inicial.";
+  }
+}
+
+// Listeners
+canvas.addEventListener("mousedown", handleStart);
+canvas.addEventListener("mousemove", handleMove);
+window.addEventListener("mouseup", () => isDrawing = false);
+canvas.addEventListener("touchstart", handleStart, {passive:true});
+canvas.addEventListener("touchmove", handleMove, {passive:true});
+window.addEventListener("touchend", () => isDrawing = false);
+
+// Init
+draw();
+updateAnalytics();
+</script>
+</body>
+</html>

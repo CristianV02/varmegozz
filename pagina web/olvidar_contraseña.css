@@ -1,0 +1,73 @@
+:root{
+    --fuente:'Quicksand', sans-serif;
+    }
+
+    html{
+    box-sizing: border-box;
+    }
+
+    ::after, *::before{
+    box-sizing: inherit;
+    }
+
+    body{
+    font-family: var(--fuente);
+    background-color: blueviolet;
+    display: flex; 
+    align-items: center;
+    height: 100vh;
+    }
+    .contenedor{
+    margin: 0 auto;
+    max-width: 900px;
+    width: 95%;
+    }
+    #cuadro{
+    font-size: 30px;   
+    }
+    .formulario{
+    padding: 50px;
+    background-color: rgb(105, 116, 153);
+    }
+    .texto-formulario h3, .input label, .texto-formulario p{
+    color: #fff;
+    }
+    .texto-formulario h3{
+    font-size: 60px;
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 150px;
+    }
+
+    .texto-formulario p{
+    font-size: 18px;
+    margin-left: 100px;
+    }
+
+    .input label{
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px 0;
+    margin-left: 100px;
+    }
+    .input input{
+    width: 100%;
+    padding: 10px 16px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    }
+    #usuario{
+    width: 600px;
+    margin-left: 100px;
+    text-align: center;
+    }
+    #contraseña-olvidada button{
+    background-color: rgb(216, 53, 53);
+    margin-left: 100px;
+    cursor: pointer;
+    border-color: gray;
+    padding: 10px 40px;
+    outline: none;
+    }

@@ -1,0 +1,43 @@
+#abrir-cerrar {
+    display: none; 
+  }
+  
+
+  label[for="abrir-cerrar"] {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999; 
+    cursor: pointer;
+    font-size: 20px;
+    color: #bb141485;
+    background-color: blue;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+ 
+  label .abrir,
+  label .cerrar {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: yellowgreen;
+    color: rgb(194, 209, 26);
+    padding: 50px 20px;
+    transition: all 0.3s ease;
+  }
+  
+  #abrir-cerrar:checked ~ #sidebar {
+    left: 0;
+  }

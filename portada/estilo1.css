@@ -1,0 +1,182 @@
+/* ==========================================================
+   1. CONFIGURACIÓN GENERAL Y FUENTES (Estilo Premium)
+   ========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); /* Cambiamos el aqua plano por un degradado oscuro profesional */
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================================
+   2. CONTENEDORES (Flexbox Optimizado)
+   ========================================================== */
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.container1 {
+    display: flex; /* Cambiado a flex para mejor control */
+    flex-direction: column;
+    text-align: right;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 3rem 0; /* Espaciado elegante superior e inferior */
+}
+
+/* ==========================================================
+   3. TÍTULOS Y TEXTOS
+   ========================================================== */
+h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #38bdf8; /* Azul celeste brillante moderno */
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    text-decoration: none; /* Quitamos el subrayado clásico de HTML */
+    position: relative;
+    display: block;
+}
+
+/* Línea decorativa debajo del título "PROYECTOS" */
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #6366f1, #38bdf8);
+    margin: 10px auto 0 auto;
+    border-radius: 10px;
+}
+
+/* ==========================================================
+   4. TARJETAS Y RECUADROS (El gran cambio visual)
+   ========================================================== */
+
+/* Estilo para el contenedor que envuelve cada tarjeta (Enlace) */
+.card-link {
+    text-decoration: none !important;
+    display: block;
+    height: 100%;
+}
+
+/* La estructura de la tarjeta interna */
+.tarjeta-proyecto {
+    background: rgba(255, 255, 255, 0.03); /* Efecto de cristal esmerilado (Glassmorphism) */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    height: 100%;
+}
+
+/* Tu franja superior ahora con degradado */
+.franja {
+    background: linear-gradient(90deg, #6366f1, #38bdf8);
+    height: 6px;
+    width: 100%;
+}
+
+/* El cuerpo interno donde van los íconos y textos */
+.recuadros {
+    width: 100%;
+    min-height: 8rem; /* Un poco más de aire para que no se vea apretado */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: transparent; /* Quitamos el naranja plano */
+}
+
+/* Ajuste para los textos dentro de las tarjetas */
+.recuadros p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #cbd5e1;
+    margin: 1rem 0 0 0;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+/* Estilo para los íconos de Bootstrap dentro de las tarjetas */
+.bi {
+    font-size: 2.5rem;
+    color: #38bdf8;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 8px rgba(56, 189, 248, 0.3));
+}
+
+/* ==========================================================
+   5. INTERACCIONES (Efectos Hover Dinámicos)
+   ========================================================== */
+.card-link:hover .tarjeta-proyecto {
+    transform: translateY(-8px); /* Eleva la tarjeta suavemente */
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(56, 189, 248, 0.15);
+}
+
+.card-link:hover .bi {
+    transform: scale(1.15); /* Agranda el ícono al pasar el mouse */
+    color: #6366f1; /* El ícono cambia a morado */
+    filter: drop-shadow(0 4px 12px rgba(99, 102, 241, 0.6));
+}
+
+.card-link:hover .recuadros p {
+    color: #ffffff; /* El texto brilla en blanco puro */
+}
+
+/* ==========================================================
+   6. BANNERS, IMÁGENES Y LOGOS (Organización Limpia)
+   ========================================================== */
+.bannerTop, .bannerTop1, .bannerTop2 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center; /* Centra los banners para evitar desbordes extremos */
+    margin-bottom: 2rem;
+}
+
+.bannerTop2 {
+    margin-top: 40px;
+}
+
+.tpimg {
+    max-height: 220px;
+    width: auto;
+    border-radius: 12px; /* Esquinas redondeadas para las imágenes */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.imagen_set {
+    max-height: 220px;
+    width: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.header_logo {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.imagen_logo {
+    max-height: 120px; /* Reducido para que no sature la vista superior */
+}

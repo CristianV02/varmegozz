@@ -1,0 +1,8 @@
+body{
+    background-image: url("/imagenes/fondo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.texto-formulario h1, .input label, .li, .texto-formulario p{
+    color: var(--Blanco);
+}

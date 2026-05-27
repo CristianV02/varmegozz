@@ -1,0 +1,109 @@
+/* Configuraciones Generales y Fondo */
+body {
+    background-color: #f4f7f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Estructura de la Barra Lateral (Sidebar) */
+#wrapper {
+    overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    width: 260px;
+    transition: all 0.3s ease;
+    background: linear-gradient(180deg, #1e1e2f 0%, #0f0f1a 100%);
+}
+
+#sidebar-wrapper .sidebar-heading {
+    letter-spacing: 1px;
+}
+
+#sidebar-wrapper .list-group-item {
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    opacity: 0.75;
+}
+
+#sidebar-wrapper .list-group-item:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    opacity: 1;
+    padding-left: 30px;
+    color: #00f2fe !important;
+}
+
+#sidebar-wrapper .list-group-item.active {
+    background: linear-gradient(90deg, #0072ff 0%, #00f2fe 100%) !important;
+    opacity: 1;
+    font-weight: 600;
+    border-radius: 0 50px 50px 0;
+    margin-right: 15px;
+}
+
+/* Contenido Principal */
+#page-content-wrapper {
+    width: 100%;
+    background-color: #f8f9fa;
+}
+
+.header-title {
+    color: #2b2d42;
+}
+
+/* Efectos Creativos de las Tarjetas */
+.card-custom {
+    border: none;
+    border-radius: 16px !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Cajas de Iconos con Gradientes Creativos */
+.icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+
+.b-gradient-blue {
+    background: linear-gradient(135deg, #0072ff 0%, #00f2fe 100%);
+}
+
+.b-gradient-green {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.b-gradient-purple {
+    background: linear-gradient(135deg, #6441a5 0%, #2a0845 100%);
+}
+
+.b-gradient-orange {
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+}
+
+/* Texto Gradiente para el Logo */
+.text-gradient {
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Ajuste Responsivo */
+@media (max-width: 768px) {
+    #sidebar-wrapper {
+        margin-left: -260px;
+    }
+    #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+    }
+}

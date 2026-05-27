@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+  <html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de registro - Mi web</title>
+  <style>
+    body{
+    background:#00ff00;
+      
+    }
+    form {
+          margin: 20px auto;
+          padding: 20px;
+          max-width: 500px;
+          border: 1px solid #000000;
+          border-radius: 30px;
+          font-family:Arial, Helvetica, sans-serif;
+        }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="text"], select, textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #000000;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    input[type="radio"], input[type="checkbox"] {
+      margin-right: 5px;
+    }
+    input[type="submit"], button {
+      background-color: #4CAF50;
+      color: rgb(255, 255, 255);
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="radio"], input[type="checkbox"] {
+      margin-right: 5px;
+    }
+   .cuadro1{
+    background: #dbffdf;
+   }
+    input[type="submit"]:hover, button:hover {
+      background-color: #45a049;
+    }
+    button {
+      background-color: #f44336;
+    }
+    button:hover {
+      background-color: #da190b;
+    }
+  </style>
+</head>
+<body>
+  <form method="GET" action="">  
+      <h1>Formulario de contacto</h1>
+    <label for="nombre">Nombre:</label>
+    <input class="cuadro1" type="text" id="nombre" name="nombre" maxlength="50" required>
+    <label for="Email">Email:</label>
+    <input class="cuadro1" type="text" id="Email" name="Email" maxlength="50" required>
+    <label for="telefono">:telefono</label>
+    <input class="cuadro1" type="text"id="telefono" name="telefono" maxlength="50" required>
+    <label for="sitio web">sitio web</label>
+    <input class="cuadro1" type="text" id="sitio web" name="sitio web" maxlength="50" required>
+    <label for="asunto">asunto</label>
+    <input class="cuadro1" type="text" id="asunto" name="asunto" required>
+    <label for="mensaje"></label>mensaje:</label>
+    <textarea class="cuadro1" type="text" id="menseje" name="mensaje" rows="6" cols="60"></textarea>
+    <input type="submit" value="Enviar">
+  </form>
+</body>
+</html>

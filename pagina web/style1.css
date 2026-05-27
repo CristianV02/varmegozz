@@ -1,0 +1,78 @@
+.body{
+    display: flex;
+    flex-direction: column;
+    background-color:ivory;
+    align-items:center;
+    justify-content: space-between;
+}
+
+.titulo1{
+    color: black;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:x-large;
+}
+
+.sub2{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:larger;
+}
+
+.sub3{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    
+}
+
+.sub4{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+
+.sub10{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+.sub5{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    
+}
+
+.sub6{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:larger;
+    text-align:left;
+}
+
+
+.sub11{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:larger;
+}
+
+.sub12{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:larger;
+}
+
+.Gwen{
+    border-bottom: 2px solid rgb(65, 41, 150);
+}
+
+.Gwen2{
+    border: 2px solid #AAA;
+}
+
+.Gwen3{
+  border-top: 4px dotte blue;
+  border-bottom: 4px dotted blue;
+  
+}
+
+.Gwen5{
+    border: 2px dashed rgb(165, 93, 11);
+}
+
+.Gwen6{
+        background-color: blueviolet;
+}
